@@ -3,7 +3,7 @@
 // 	console.log(response);
 // }
 console.log("Let's get this party started!");
-const body = document.querySelector("body");
+const imgDiv = document.querySelector(".img-container");
 const searchForm = document.querySelector("#searchGiphy");
 const inputField = document.querySelector("input");
 const deleteButton = document.querySelector("#delete");
@@ -13,25 +13,30 @@ searchForm.addEventListener("submit", async function (e) {
 	e.preventDefault();
 	let userInput = inputField.value;
 	let gifUrl = await getData(userInput);
-	// appendGif(gifUrl);
+	appendGif(gifUrl);
 	inputField.value = "";
 });
 
 deleteButton.addEventListener("click", function (e) {
 	e.preventDefault();
+	let imgArray = document.querySelectorAll("img");
+	for (let img of imgArray) {
+		img.remove();
+	}
 });
 
 async function getData(searchTerm) {
 	const res = await axios.get("https://api.giphy.com/v1/gifs/search", {
 		params: { q: searchTerm, key },
 	});
-	// return res.data.data[0].images.downsized_medium.url;
-	console.log(res.data.data[0].images.downsized_medium.url);
+	return await res.data.data[0].images.fixed_width.url;
+	// console.log(res.data.data[0].images.downsized_medium.url);
 }
 
 function appendGif(url) {
-	const newGif = document.createElement("img").setAttribute("src", url);
-	body.append(newGif);
+	const newGif = document.createElement("img");
+	newGif.setAttribute("src", url);
+	imgDiv.append(newGif);
 }
 
 // getData("meow");

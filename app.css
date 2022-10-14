@@ -1,5 +1,6 @@
 body {
 	background-color: rgb(21, 22, 70);
+	max-width: 1700px;
 }
 
 label {
@@ -21,7 +22,16 @@ img {
 	position: relative;
 	display: flex;
 	margin: 50px;
-	max-width: 400px;
+	width: 200px;
+}
+
+.img-container {
+	display: flex;
+	position: relative;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 1700px;
+	max-width: 1700px;
 }
 
 .input-container {
