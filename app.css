@@ -1,0 +1,45 @@
+body {
+	background-color: rgb(21, 22, 70);
+}
+
+label {
+	color: rgba(255, 255, 255, 0.644);
+}
+
+button,
+input {
+	padding: 8px;
+	border-radius: 5px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+	cursor: pointer;
+}
+
+img {
+	position: relative;
+	display: flex;
+	margin: 50px;
+	max-width: 400px;
+}
+
+.input-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+}
+
+#search {
+	color: white;
+	font-weight: bold;
+	background-color: rgb(58, 202, 118);
+}
+
+#delete {
+	color: white;
+	font-weight: bold;
+	background-color: rgb(182, 45, 45);
+}
